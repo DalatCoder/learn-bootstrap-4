@@ -1,1 +1,1 @@
-# LEARN BOOTSTRAP 4 AND BUILD 5 PROJECT WITH BRAD TRAVERSY ON UDEMY
+# Learn Bootstrap 4 and build 5 projects with Brad Traversy on Udemy
