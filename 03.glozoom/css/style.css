@@ -104,3 +104,8 @@ div[class*='carousel-image-'] {
  #faq .card-body {
    background-color: #333;
  }
+
+ #main-footer {
+   background-color: #333;
+   color: #fff;
+ }
