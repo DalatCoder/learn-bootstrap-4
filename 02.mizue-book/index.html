@@ -14,8 +14,11 @@
     <title>Bootstrap Theme</title>
   </head>
 
-  <body>
-    <nav class="navbar navbar-expand-md navbar-light fixed-top py-4">
+  <body id="home" data-spy="scroll" data-target="#main-nav">
+    <nav
+      id="main-nav"
+      class="navbar navbar-expand-md navbar-light fixed-top py-4"
+    >
       <div class="container">
         <a class="navbar-brand" href="#home">
           <img src="img/mlogo.png" width="50" height="50" alt="" />
@@ -451,11 +454,25 @@
           </div>
 
           <div class="col-lg-3 col-4 mx-auto my-3 align-self-center">
-            <img class="img-fluid" src="img/mlogo.png" alt="">
+            <img class="img-fluid" src="img/mlogo.png" alt="" />
           </div>
         </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="py-5 bg-primary text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-6 ml-auto">
+            <p class="lead">
+              Copyright &copy;
+              <span id="year"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
@@ -476,6 +493,9 @@
     <script>
       // Get the current year for the copyright
       $('#year').text(new Date().getFullYear());
+
+      // Init ScrollSPY
+      $('body').scrollspy({ target: '#main-nav' });
     </script>
   </body>
 </html>
