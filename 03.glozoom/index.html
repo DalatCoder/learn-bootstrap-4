@@ -173,14 +173,58 @@
               perferendis ipsum nobis cum modi. Laudantium quas nisi ullam fuga
               minus Animi!
             </p>
-            <a class="btn btn-outline-danger btn-lg" href="about.html">Learn More</a>
+            <a class="btn btn-outline-danger btn-lg" href="about.html"
+              >Learn More</a
+            >
           </div>
           <div class="col-md-6">
-            <img class="img-fluid" src="img/laptop.png" alt="">
+            <img class="img-fluid" src="img/laptop.png" alt="" />
           </div>
         </div>
       </div>
     </section>
+
+    <!-- VIDEO PLAY -->
+    <section id="video-play">
+      <div class="dark-overlay">
+        <div class="row">
+          <div class="col">
+            <div class="container p-5">
+              <a
+                class="video"
+                href="#"
+                data-video="https://www.youtube.com/embed/HnwsG9a5riA"
+                data-toggle="modal"
+                data-target="#video-modal"
+              >
+                <i class="fas fa-play fa-3x"></i>
+              </a>
+              <h1>See What We Do</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div id="video-modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <iframe
+              src=""
+              frameborder="0"
+              height="350"
+              width="100%"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
@@ -206,6 +250,22 @@
       $('.carousel').carousel({
         interval: 5000,
         pause: 'hover',
+      });
+
+      // Video Play
+      $(function () {
+        // Auto play modal video
+        $('.video').click(function () {
+          var theModal = $(this).data('target'),
+            videoSRC = $(this).attr('data-video'),
+            videoSRCauto =
+              videoSRC +
+              '?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1';
+          $(theModal + ' iframe').attr('src', videoSRCauto);
+          $(theModal + ' button.close').click(function () {
+            $(theModal + ' iframe').attr('src', videoSRC);
+          });
+        });
       });
     </script>
   </body>
