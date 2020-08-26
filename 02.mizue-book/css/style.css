@@ -7194,6 +7194,17 @@ body {
 #boxes .card {
   height: 100%; }
 
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid; }
+
+#about [data-toggle="collapse"] {
+  cursor: pointer;
+  transition: all .3s; }
+  #about [data-toggle="collapse"]:hover {
+    filter: brightness(-70%); }
+
 @media only screen and (max-width: 768px) {
   .mb-resp {
     margin-bottom: 1rem; } }
