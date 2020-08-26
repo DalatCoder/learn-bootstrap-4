@@ -7198,12 +7198,32 @@ body {
   width: 50%;
   margin: auto;
   border-bottom: 1px #ddd solid; }
+  @media only screen and (max-width: 992px) {
+    .info-header {
+      width: 80%; } }
 
 #about [data-toggle="collapse"] {
   cursor: pointer;
   transition: all .3s; }
   #about [data-toggle="collapse"]:hover {
     filter: brightness(-70%); }
+
+#authors img {
+  margin-top: -50px; }
+
+#authors .card {
+  transition: all .3s; }
+  @media only screen and (max-width: 992px) {
+    #authors .card {
+      margin-bottom: 3rem; } }
+  #authors .card .fab {
+    transition: all .3s; }
+
+#authors .card:hover {
+  background: #3292a6;
+  color: #fff; }
+  #authors .card:hover .fab {
+    color: #fff; }
 
 @media only screen and (max-width: 768px) {
   .mb-resp {

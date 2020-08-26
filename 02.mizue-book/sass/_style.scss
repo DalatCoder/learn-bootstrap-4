@@ -66,6 +66,10 @@ body {
   width: 50%;
   margin: auto;
   border-bottom: 1px #ddd solid;
+
+  @media only screen and (max-width: 992px) {
+    width: 80%;
+  }
 }
 
 #about {
@@ -78,6 +82,33 @@ body {
     }
   }
 }
+
+#authors {
+  img {
+    margin-top: -50px;
+  }
+
+  .card {
+    transition: all .3s;
+    @media only screen and (max-width: 992px) {
+      margin-bottom: 3rem;
+    }
+
+    .fab {
+      transition: all .3s;
+    }
+  }
+
+  .card:hover {
+    background: $primary;
+    color: #fff;
+
+    .fab {
+      color: #fff;
+    }
+  }
+}
+
 
 @media only screen and (max-width: 768px) {
   .mb-resp {
