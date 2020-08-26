@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 #navbarCollapse .navbar-nav .nav-link {
   font-size: 14px;
   text-transform: uppercase;
