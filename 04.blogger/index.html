@@ -86,6 +86,166 @@
       </div>
     </header>
 
+    <!-- ACTIONS -->
+    <section id="actions" class="py-4 mb-4 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a
+              class="btn btn-primary btn-block"
+              href="#"
+              data-toggle="modal"
+              data-target="#addPostModal"
+            >
+              <i class="fas fa-plus"></i> Add Post
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a
+              class="btn btn-success btn-block"
+              href="#"
+              data-toggle="modal"
+              data-target="#addCategoryModal"
+            >
+              <i class="fas fa-plus"></i> Add Category
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a
+              class="btn btn-warning btn-block"
+              href="#"
+              data-toggle="modal"
+              data-target="#addUserModal"
+            >
+              <i class="fas fa-plus"></i> Add User
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+
+    <!-- ADD POST MODAL -->
+    <div id="addPostModal" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Add Post</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" class="form-control" name="category">
+                  <option value="web-development">Web Development</option>
+                  <option value="tech-gadgets">Tech Gadgets</option>
+                  <option value="business">Business</option>
+                  <option value="health">Health & Wellness</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="image">Upload Image</label>
+                <div class="custom-file">
+                  <input id="image" class="custom-file-input" type="file" />
+                  <label for="image" class="custom-file-label"
+                    >Choose File</label
+                  >
+                </div>
+                <small class="form-text text-muted">Max Size 3mb</small>
+              </div>
+              <div class="form-group">
+                <label for="body">Body</label>
+                <textarea
+                  id="body"
+                  name="editor1"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <input
+                class="btn btn-primary btn-block"
+                type="submit"
+                value="Submit"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD CATEGORY MODAL -->
+    <div id="addCategoryModal" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Add Category</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="category-title">Category</label>
+                <input id="category-title" class="form-control" type="text" />
+              </div>
+              <input
+                class="btn btn-success btn-block"
+                type="submit"
+                value="Submit"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD USER MODAL -->
+    <div id="addUserModal" class="modal fade">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-white">
+            <h5 class="modal-title">Add User</h5>
+            <button class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" type="text" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control" type="email" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password" />
+              </div>
+              <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input id="password2" class="form-control" type="password" />
+              </div>
+              <input
+                class="btn btn-warning btn-block"
+                type="submit"
+                value="Submit"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="http://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -101,10 +261,21 @@
       integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
     <script>
+      CKEDITOR.replace('editor1');
+
       // Get the current year for the copyright
       $('#year').text(new Date().getFullYear());
+
+      // Disable auto complete on input field
+      document
+        .querySelectorAll('input[type="text"]')
+        .forEach((input) => input.setAttribute('autoComplete', 'off'));
+      document
+        .querySelectorAll('input[type="email"]')
+        .forEach((input) => input.setAttribute('autoComplete', 'off'));
     </script>
   </body>
 </html>
